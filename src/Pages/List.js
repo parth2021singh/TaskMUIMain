@@ -5,6 +5,7 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -29,12 +30,12 @@ const List = () => {
       <Appbar />
 
       <div>
-        <Grid container spacing={4} margin="0 auto">
+        <Grid container spacing={8} margin="0 auto">
           {details.map((value) => {
             return (
               <Grid item key={value.id}>
                 <Card sx={{ width: 140, height: 180 }}>
-                  <CardContent alignItems="center">
+                  <CardContent alignItems="center" padding="0 auto">
                     <CardMedia
                       component="img"
                       sx={{ height: "25%", width: "25%" }}
@@ -48,7 +49,19 @@ const List = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">More Details</Button>
+                    <Tooltip
+                      title={
+                        <span>
+                          Email: {value.email}
+                          <br />
+                          Phone: {value.phone}
+                          <br />
+                          Address: {value.location.country}
+                        </span>
+                      }
+                    >
+                      <Button size="small">More Details</Button>
+                    </Tooltip>
                   </CardActions>
                 </Card>
               </Grid>

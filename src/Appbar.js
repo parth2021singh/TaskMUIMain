@@ -13,7 +13,7 @@ const Appbar = () => {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static" fullWidth>
           <Toolbar>
             <IconButton
               size="large"

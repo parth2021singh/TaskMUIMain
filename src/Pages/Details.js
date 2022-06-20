@@ -29,6 +29,7 @@ const Details = () => {
   const [email, setEmail] = useState("");
   const [pNumber, setPNumber] = useState("");
   const [, setDetails] = useState([]);
+  // const [isError, setIsError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -159,7 +160,7 @@ const Details = () => {
                   <TextField
                     type="number"
                     value={pNumber}
-                    label="Phone No"
+                    label="Phone"
                     placeholder="enter phone no"
                     variant="outlined"
                     fullWidth
